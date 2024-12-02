@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #a08bb7, #8e9093);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+            color: #fff;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: move 15s linear infinite;
+        }
+
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .circle:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 80%;
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #a08bb7, #8e9093);
+            color: #030303;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #e9e9f0;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header .menu a:hover {
+            color: #e00a0a;
+        }
+        .projects {
+            margin-top: 100px;
+            padding: 40px 50px;
+        }
+
+        .projects h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f1faee;
+            border-bottom: 2px solid #a8dadc;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            gap: 50px;
+        }
+
+        .project-card {
+            background: #1d3557;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 20px;
+        }
+
+        .project-card h2 {
+            font-size: 1.5rem;
+            color: #2a9d8f;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #f1faee;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <header>
+        <div class="logo">Projects</div>
+        <nav class="menu">
+            <a href="D:\spotknack\Home.html">Home</a>
+            <a href="D:\spotknack\About.html">About</a>
+            <a href="D:\spotknack\Education.html">Education</a>
+            <a href="D:\spotknack\Projects.html">Projects</a>
+            <a href="D:\spotknack\Contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="projects">
+       
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://neurosys.com/wp-content/webp-express/webp-images/uploads/2023/11/what-is-deep-learning.jpg.webp"alt="deep learning">
+                <div class="content">
+                    <h2>Tire Defect Detection</h2>
+                    <p>Built a real-time tire defect detection system using deep learning techniques.
+                    The system used the yolov8 algorithm, a state-of-the-art object detection algorithm, to detect defects such as cuts, bead damage and bulges on tires from images captured in real-time.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://media.licdn.com/dms/image/D4D12AQFG6GdFfKPR5w/article-cover_image-shrink_600_2000/0/1711685209128?e=2147483647&v=beta&t=08Bkulj7SQh61ltfCdwCs4qylVSy0u5p6FXNi_W3Dx4" alt="jira">
+                <div class="content">
+                    <h2>Bus Ticket Booking System</h2>
+                    <p>Built a project that aims to develop a web- based platform that allows users to search for bus-routes, view bus schedules and book tickets online.
+                    The project is managed using the scrum framework in Jira to ensure agile development and efficient project tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #a08bb7, #8e9093);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: move 15s linear infinite;
+        }
+
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+            animation-duration: 2s;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 75%;
+            animation-delay: 2s;
+            animation-duration: 2s;
+        }
+
+        .circle:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 80%;
+            left: 30%;
+            animation-delay: 4s;
+            animation-duration: 2s;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #a08bb7, #8e9093);
+            color: #090909;
+            z-index: 1;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #e9e9f0;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header .menu a:hover {
+            color: #e63946;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1000px; 
+            margin: 80px auto 0;
+        }
+
+        h1 {
+            color: #a21919;
+        }
+
+        .subtitle {
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            display: flex;
+            background-color:rgb(231, 223, 234);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            width: 100%; 
+            max-width: 900px;
+            height: 200px; 
+        }
+
+        .card img {
+            width: 250px; 
+            height: 100%;
+        }
+
+        .card-content {
+            padding: 30px; 
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 22px; 
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card-status {
+            font-size: 16px;
+            color: #28a745;
+        }
+
+        .card-status.completed {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <header>
+        <div class="logo">Education</div>
+        <nav class="menu">
+            <a href="D:\spotknack\Home.html">Home</a>
+            <a href="D:\spotknack\About.html">About</a>
+            <a href="D:\spotknack\Education.html">Education</a>
+            <a href="D:\spotknack\Projects.html">Projects</a>
+            <a href="D:\spotknack\Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>My Education</h1>
+        <p class="subtitle">Education Is Not The Learning Of Facts, But The Training Of The Mind To Think.</p>
+        <div class="card">
+            <img src="https://media.licdn.com/dms/image/v2/C561BAQHurTPqLub2nQ/company-background_10000/company-background_10000/0/1634310501095/sriramakrishnaenggcollege_cover?e=2147483647&v=beta&t=rB3LUmxjVFhAEUUFFfSx861K6tQsojkdss5asOZ25vE" alt="SREC College">
+            <div class="card-content">
+                <p class="card-title">Bachelor Of Information Technology</p>
+                <p class="card-subtitle">Sri Ramakrishna Engineering College | Coimbatore</p>
+                <p class="card-status">2022-2026 | Pursuing</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://www.joonsquare.com/usermanage/image/business/saraswathi-vidhyalaya-karur-9666/saraswathi-vidhyalaya-karur-saraswathi-vidhyalaya-002.jpeg" alt="KSV School">
+            <div class="card-content">
+                <p class="card-title">HSC BioMaths</p>
+                <p class="card-subtitle">Karur Saraswathi Higher Secondary School | Karur</p>
+                <p class="card-status completed">2020-2022 | Completed</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
