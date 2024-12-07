@@ -11,7 +11,73 @@ body {
      color: #fff;
      overflow: hidden;
  }
- 
+ .container {
+     text-align: center;
+ }
+
+ .loader {
+     width: 100px;
+     height: 100px;
+     border: 10px solid rgba(255, 255, 255, 0.3);
+     border-top: 10px solid #fff;
+     border-radius: 50%;
+     animation: spin 1.5s linear infinite;
+     margin: 0 auto;
+ }
+
+ @keyframes spin {
+     from {
+         transform: rotate(0deg);
+     }
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
+ .loading-text {
+     font-size: 1.8rem;
+     margin-top: 20px;
+     opacity: 1;
+     transition: opacity 1s ease-in-out;
+ }
+
+ .start-button {
+     display: none;
+     margin-top: 20px;
+     background-color: #ffffff;
+     color: #2575fc;
+     padding: 15px 30px;
+     font-size: 1.5rem;
+     font-weight: bold;
+     border: none;
+     border-radius: 50px;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+     cursor: pointer;
+     transition: transform 0.3s, background-color 0.3s;
+     animation: fade-in 2s ease-in-out forwards;
+ }
+
+ .start-button:hover {
+     background-color: #6a11cb;
+     color: #fff;
+     transform: scale(1.1);
+ }
+
+ @keyframes fade-in {
+     0% {
+         opacity: 0;
+         transform: translateY(20px);
+     }
+     100% {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .hidden {
+     opacity: 0;
+     pointer-events: none;
+ }
  .portfolio {
      display: none; 
      width: 100%;

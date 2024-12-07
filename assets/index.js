@@ -1,4 +1,20 @@
+setTimeout(() => {
+    const loader = document.getElementById('loader');
+    const loadingText = document.getElementById('loadingText');
+    const startButton = document.getElementById('startButton');
+    
+    loader.style.display = 'none'; 
+    loadingText.classList.add('hidden'); 
+    startButton.style.display = 'inline-block'; 
+}, 2000);
 
+document.getElementById('startButton').addEventListener('click', () => {
+    const loadingContainer = document.getElementById('loadingContainer');
+    const portfolioContent = document.getElementById('portfolioContent');
+
+    loadingContainer.style.display = 'none'; 
+    portfolioContent.style.display = 'block'; 
+});
 
 const dynamicText = document.getElementById('dynamicText');
 const textArray = ['Frontend Developer', 'Web Designer', 'Pixel Perfectionist'];
