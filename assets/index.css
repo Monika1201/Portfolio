@@ -15,6 +15,9 @@ body {
      text-align: center;
  }
 
+canvas {
+  display: block;
+}
  .loader {
      width: 100px;
      height: 100px;
