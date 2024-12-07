@@ -2,3 +2,12 @@
 from = "/*"
 to = "/index.html"
 status=100
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "no-cache"
