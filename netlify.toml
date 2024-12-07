@@ -1,7 +1,4 @@
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status=100
+
 [[headers]]
   for = "/*.css"
   [headers.values]
