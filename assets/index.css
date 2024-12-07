@@ -1,281 +1,257 @@
-/* General Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+/* Global Reset and Transition */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
 }
 
-canvas {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+/* HTML & Body */
+html {
+  font-size: 62.5%; /* Setting base font size */
+  overflow-x: hidden; /* Preventing horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
+/* Scrollbar Styling */
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgb(235, 202, 245);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #420177;
+}
+
+/* Selection Highlight */
+*::selection {
+  background: #2b3dda;
+  color: #fff;
+}
+
+/* Body */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #a08bb7, #8e9093);
-    font-family: 'Verdana', sans-serif;
-    color: #fff;
-    overflow: hidden;
+  background: #f7f7f7;
+  font-family: "Poppins", sans-serif;
 }
 
-.container {
-    text-align: center;
+/* Pre-loader Styles */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #e6eff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
-.loader {
-    width: 100px;
-    height: 100px;
-    border: 10px solid rgba(255, 255, 255, 0.3);
-    border-top: 10px solid #fff;
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite;
-    margin: 0 auto;
+.loader-container.fade-out {
+  top: -120%;
 }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.loading-text {
-    font-size: 1.8rem;
-    margin-top: 20px;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-}
-
-.start-button {
-    display: none;
-    margin-top: 20px;
-    background-color: #ffffff;
-    color: #2575fc;
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    animation: fade-in 2s ease-in-out forwards;
-}
-
-.start-button:hover {
-    background-color: #6a11cb;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.portfolio {
-    display: none;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #a08bb7, #8e9093);
-    color: #333;
-    font-family: Arial, sans-serif;
-}
-
+/* Navbar Styles */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: linear-gradient(135deg, #a08bb7, #8e9093);
-    color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 10%;
+  height: 6.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
 }
 
 header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #333;
 }
 
-.menu a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #f3eaea;
+header .menu {
+  display: flex;
+  gap: 2rem;
 }
 
-.menu a:hover {
-    color: #e63946;
+header .menu a {
+  font-size: 1.6rem;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
+header .menu a:hover {
+  color: #e63946;
+}
+
+/* Section Styles */
+section {
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+
+/* Heading Style */
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.heading span {
+  color: #e63946; /* Highlighted text */
+}
+
+/* Content Layout */
 .content-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    height: calc(100vh - 80px);
-    gap: 20px;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  gap: 20px;
+  box-sizing: border-box;
 }
 
 .content-container .left-section {
-    max-width: 50%;
-    text-align: justify;
+  max-width: 50%;
+  text-align: justify;
 }
 
 .content-container .left-section h1 {
-    font-size: 3rem;
-    margin: 0;
+  font-size: 3rem;
+  margin: 0;
 }
 
 .content-container .left-section h1 span {
-    color: #e63946;
-}
-
-.content-container .left-section h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #e61763;
-    margin: 10px 0;
+  color: #e63946;
 }
 
 .content-container .left-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.content-container .left-section .buttons {
-    margin-top: 40px;
-}
-
-.content-container .left-section .buttons a {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #e63946;
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    margin-right: 10px;
-    transition: background-color 0.3s;
-}
-
-.content-container .left-section .buttons a:hover {
-    background-color: #d62828;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
 }
 
 .content-container .right-section {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .content-container .right-section img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ffffff;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .content-container .right-section img:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
 }
 
+/* Buttons */
+.buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e63946;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.buttons a:hover {
+  background-color: #d62828;
+}
+
+/* Social Links */
 .social-links {
-    margin-top: 40px;
-    display: flex;
-    gap: 10px;
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
 }
 
 .social-links a {
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    line-height: 1;
-    margin-right: 8px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  line-height: 1;
+  margin-right: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
 .social-links a.gmail {
-    color: #d93025;
+  color: #d93025;
 }
 
 .social-links a.linkedin {
-    color: #0077b5;
+  color: #0077b5;
 }
 
 .social-links a.github {
-    color: #333;
+  color: #333;
 }
 
 .social-links a.youtube {
-    color: #ff0000;
+  color: #ff0000;
 }
 
 .social-links a.medium {
-    color: #f2f5f4;
+  color: #f2f5f4;
 }
 
 .social-links a.twitter {
-    color: #1da1f2;
+  color: #1da1f2;
 }
 
 .social-links a:hover {
-    background: #d7a1eb;
+  background: #d7a1eb;
 }
 
+/* Typing Effect */
 .typing {
-    display: inline-block;
-    border-right: 2px solid #e63946;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3.5s steps(30) 1s forwards, blink 0.75s step-end infinite;
+  display: inline-block;
+  border-right: 2px solid #e63946;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s steps(30) 1s forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+  50% {
+    border-color: transparent;
+  }
 }
