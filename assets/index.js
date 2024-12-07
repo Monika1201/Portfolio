@@ -1,13 +1,5 @@
 
 
-document.getElementById('startButton').addEventListener('click', () => {
-    const loadingContainer = document.getElementById('loadingContainer');
-    const portfolioContent = document.getElementById('portfolioContent');
-
-    loadingContainer.style.display = 'none'; 
-    portfolioContent.style.display = 'block'; 
-});
-
 const dynamicText = document.getElementById('dynamicText');
 const textArray = ['Frontend Developer', 'Web Designer', 'Pixel Perfectionist'];
 let index = 0;
