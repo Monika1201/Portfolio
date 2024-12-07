@@ -11,14 +11,7 @@ body {
      color: #fff;
      overflow: hidden;
  }
- .container {
-     text-align: center;
- }
-
- .hidden {
-     opacity: 0;
-     pointer-events: none;
- }
+ 
  .portfolio {
      display: none; 
      width: 100%;
