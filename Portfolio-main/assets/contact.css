@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #a08bb7, #8e9093);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: move 15s linear infinite;
+}
+
+.circle:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+    animation-duration: 2s;
+}
+
+.circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 75%;
+    animation-delay: 2s;
+    animation-duration: 2s;
+}
+
+.circle:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    top: 80%;
+    left: 30%;
+    animation-delay: 4s;
+    animation-duration: 2s;
+}
+
+@keyframes move {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(135deg, #a08bb7, #8e9093);
+    color: #090909;
+    z-index: 1;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header .menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #e9e9f0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header .menu a:hover {
+    color: #e63946;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 30px; 
+}
+
+.image-section {
+    padding: 20px;
+    background-color: #e8f0fe;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.form-section {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h1 {
+    margin-bottom: 20px;
+    color: #5a5a5a;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section form input,
+.form-section form textarea,
+.form-section form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-section form textarea {
+    resize: none;
+    height: 150px;
+    width:400px;
+}
+
+.form-section form button {
+    background-color: #4a47f5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-section form button:hover {
+    background-color: #3c3bcc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .image-section {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    header .logo {
+        font-size: 1.5rem;
+    }
+
+    header .menu a {
+        font-size: 0.9rem;
+        margin-left: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .image-section {
+        margin-right: 0;
+    }
+
+    .form-section {
+        padding: 30px 20px;
+    }
+
+    .form-section form textarea {
+        width: 100%;
+    }
+
+    .form-section form input,
+    .form-section form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .menu a {
+        margin: 10px 0;
+    }
+
+    .image-section {
+        margin-bottom: 20px;
+    }
+
+    .form-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-section form textarea {
+        width: 100%;
+    }
+
+    .form-section form input,
+    .form-section form button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .form-section form button {
+        padding: 10px;
+    }
+}
