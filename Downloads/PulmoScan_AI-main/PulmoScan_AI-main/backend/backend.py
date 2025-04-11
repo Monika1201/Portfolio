@@ -24,7 +24,8 @@ class PredictionResult(BaseModel):
     confidence: float
 
 # Load model only once
-model = YOLO(r'C:\Users\monik\Downloads\PulmoScan_AI-main\PulmoScan_AI-main\backend\best.pt')
+model = YOLO(r'./backend/best.pt')
+
 
 @app.get("/health")
 async def health_check():
